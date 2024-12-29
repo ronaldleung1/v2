@@ -7,14 +7,14 @@ import Layout from '../layouts/Layout.astro';
 	<main class="my-24">
 		<div class="flex justify-center px-12">
 			<article class="max-w-2xl flex flex-col gap-8">
-				<section class="bg-[#005d4b] rounded-xl p-8 text-white">
+				<section class="hero">
 					<h1 class="text-3xl">hey, i'm ronald.</h1>
 					<p class="opacity-60 text-lg">
 						welcome to my corner of the internet.
 					</p>
 				</section>
-				<section class="bg-[#eaebe2] rounded-xl p-8 space-y-4">
-					<h2 class="text-2xl">about</h2>
+				<section class="bg-[#eaebe2] rounded-xl p-8 space-y-4 section-shadow">
+					<h2 class="text-2xl text-[#005d4b]">about me</h2>
 					<p class="mb-2">I’m a curious technologist with a passion for building. Currently, I’m studying CS at Cornell, where I spend a lot of time building community at Armada and writing code for Cornell AutoBoat.</p>
 					<p>I’ve done a fair bit of work in full-stack development, but I’m also dabbling in startups, AI, and creative work. Lately, i’ve been interested in AI agents, NeRFs/Gaussian Splatting, and embodied AI - tools that can help intelligent systems perceive their environments and take action. I’m also fascinated by hard tech and sustainable cities.</p>
 				</section>
@@ -22,3 +22,47 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</main>
 </Layout>
+
+<style>
+	.blur {
+		@apply relative sticky w-full -mx-4 h-24 z-10 backdrop-blur-[5px] opacity-[0.95];
+		--h: min(96px, var(--page-top));
+		pointer-events: none;
+	}
+
+	.blur:after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(var(--direction), var(--bg), var(--transparent));
+	}
+
+	.blur:first-child {
+		margin-bottom: calc(-1 * var(--h));
+		top: 0;
+		--direction: to bottom;
+	}
+
+	.blur:last-child {
+		margin-top: calc(-1 * var(--h));
+		bottom: 0;
+		--direction: to top;
+	}
+
+	.section-shadow {
+		box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.05);
+	}
+
+	/* relative */
+	/* rounded-xl p-8 text-white border-2 border-[#80DEC9]
+					bg-[#005d4b]
+					bg-[url('/noise.png')] bg-repeat [background-blend-mode:overlay] bg-opacity-50
+					before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-[#005d4b] before:opacity-90 */
+	.hero {
+		@apply rounded-xl p-8 text-white border-2 border-[#80DEC9];
+		background-color: #005d4b;
+		background-image: linear-gradient(0deg, #005d4b, transparent), url('/noise.png');
+		background-repeat: no-repeat, repeat;
+		background-size: auto, 100%;
+	}
+</style>

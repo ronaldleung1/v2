@@ -13,27 +13,3 @@ html {
 } */
 
 /* styles.css */
-.blur {
-	@apply relative sticky w-full -mx-4 h-24 z-10 backdrop-blur-[5px] opacity-[0.95];
-	--h: min(96px, var(--page-top));
-	pointer-events: none;
-}
-
-.blur:after {
-	content: "";
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(var(--direction), var(--bg), var(--transparent));
-}
-
-.blur:first-child {
-	margin-bottom: calc(-1 * var(--h));
-	top: 0;
-	--direction: to bottom;
-}
-
-.blur:last-child {
-	margin-top: calc(-1 * var(--h));
-	bottom: 0;
-	--direction: to top;
-}
