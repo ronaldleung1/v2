@@ -17,12 +17,11 @@ import Card from '../components/Card.astro';
 
 				<section class="bg-[#eaebe2] rounded-xl p-8 space-y-4 sunken-shadow">
 					<h2 class="text-2xl text-[#005d4b]">about me</h2>
-					<p class="mb-2">I’m a curious technologist with a passion for building. Currently, I’m studying CS at Cornell, where I spend a lot of time building community at Armada and writing code for Cornell AutoBoat.</p>
+					<p class="mb-2">I’m a curious technologist with a passion for building. Currently, I’m studying CS at Cornell, where I spend a lot of time building community at <a href="https://armada.build/" class="link">Armada</a> and writing code for <a href="https://www.cornellautoboat.com/" class="link">Cornell AutoBoat.</a></p>
 					<p>I’ve done a fair bit of work in full-stack development, but I’m also dabbling in startups, AI, and creative work. Lately, I’ve been interested in AI agents, NeRFs/Gaussian Splatting, and embodied AI - tools that can help intelligent systems perceive their environments and take action.</p>
-
 				</section>
 
-				<section class="py-8 space-y-4">
+				<section class="pt-8 space-y-4">
 					<h2 class="text-2xl text-[#005d4b] mx-8">projects</h2>
 					<ul role="list" class="flex flex-col gap-4">
 						<Card
@@ -46,6 +45,11 @@ import Card from '../components/Card.astro';
 							body="Virtual piano desktop app made with OCaml and Raylib. Final project for CS 3110 at Cornell"
 						/>
 					</ul>
+				</section>
+
+				<section class="p-8 space-y-4">
+					<h2 class="text-2xl text-[#005d4b]">get in touch</h2>
+					<p>I'm always down to chat. Feel free to reach out at rfl68 [at] cornell [dot] edu. You can also find me on <a href="https://github.com/ronaldleung1" class="link">GitHub</a> and <a href="https://www.linkedin.com/in/ronaldleung1" class="link">LinkedIn</a>.</p>
 				</section>
 			</article>
 		</div>
@@ -83,6 +87,11 @@ import Card from '../components/Card.astro';
 					--page-top:64px
 			}
 	}
+
+	.link {
+		@apply underline underline-offset-2 decoration-[#005d4a50] transition-colors hover:decoration-[#005d4b];
+	}
+
 	.top-blur {
     /* @apply relative z-10 backdrop-blur-[5px] opacity-[0.95]; */
 		position: relative;
@@ -121,41 +130,11 @@ import Card from '../components/Card.astro';
 			bottom: 0;
 			--direction: to top
 	}
-	/* .blur {
-		@apply sticky w-full -mx-4 h-24 z-10 backdrop-blur-[5px] opacity-[0.95];
-		--h: 96px;
-		pointer-events: none;
-	}
-
-	.blur:after {
-		content: "";
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(0deg, transparent, #f6f7ee);
-	}
-
-	.blur:first-child {
-		margin-bottom: calc(-1 * var(--h));
-
-		top: 0;
-		--direction: to bottom;
-	}
-
-	.blur:last-child {
-		margin-top: calc(-1 * var(--h));
-		bottom: 0;
-		--direction: to top;
-	} */
 
 	.sunken-shadow {
 		box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.05);
 	}
 
-	/* relative */
-	/* rounded-xl p-8 text-white border-2 border-[#80DEC9]
-					bg-[#005d4b]
-					bg-[url('/noise.png')] bg-repeat [background-blend-mode:overlay] bg-opacity-50
-					before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-[#005d4b] before:opacity-90 */
 	.hero {
 		@apply rounded-xl p-8 text-white border-2 border-[#80DEC9];
 		background-color: #005d4b;
