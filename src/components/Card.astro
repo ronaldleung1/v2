@@ -8,17 +8,21 @@ interface Props {
 const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card">
+<li class="link-card bg-[#FDFDFA] border border-[#D8D9D0] card-shadow rounded-xl px-4 py-3 mx-4">
 	<a href={href}>
-		<h2>
+		<h3 class="font-['DM_Sans']">
 			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
+		</h3>
+		<p class="opacity-50">
 			{body}
 		</p>
 	</a>
 </li>
+<style>
+  .card-shadow {
+		box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  }
+</style>
 <!-- <style>
 	.link-card {
 		list-style: none;
