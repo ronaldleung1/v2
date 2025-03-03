@@ -1,4 +1,5 @@
 ---
+import Analytics from '@vercel/analytics/astro'
 interface Props {
 	title: string;
 }
@@ -17,6 +18,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 		<!-- Import Tailwind CSS -->
 		<link rel="stylesheet" href="/path/to/tailwind.css" />
+		<Analytics />
 	</head>
 	<body>
 		<slot />
