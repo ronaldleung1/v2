@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import MotionWrapper from '../components/MotionWrapper';
 ---
 
 <Layout title="ronald leung">
@@ -8,49 +9,68 @@ import Card from '../components/Card.astro';
 	<main class="my-24">
 		<div class="flex justify-center px-4 sm:px-12">
 			<article class="max-w-2xl flex flex-col gap-8">
-				<section class="hero">
-					<h1 class="text-3xl">hey, i'm ronald.</h1>
-					<p class="opacity-60 text-lg">
-						welcome to my corner of the internet.
-					</p>
-				</section>
+				<MotionWrapper animation="fadeUp" delay={0} client:load>
+					<section class="hero">
+						<h1 class="text-3xl">hey, i'm ronald.</h1>
+						<p class="opacity-60 text-lg">
+							welcome to my corner of the internet.
+						</p>
+					</section>
+				</MotionWrapper>
 
-				<section class="bg-[#eaebe2] rounded-xl p-8 space-y-4 sunken-shadow">
-					<h2 class="text-2xl text-[#005d4b]">about me</h2>
-					<p class="mb-2">I’m a curious technologist with a passion for building. Currently, I’m studying CS at Cornell, where I spend a lot of time building community at <a href="https://armada.build/" class="link">Armada</a> and writing code for <a href="https://www.cornellautoboat.com/" class="link">Cornell AutoBoat.</a></p>
-					<p>I’ve done a fair bit of work in full-stack development, but I’m also dabbling in startups, AI, and creative work. Lately, I’ve been interested in AI agents, NeRFs/Gaussian Splatting, and embodied AI - tools that can help intelligent systems perceive their environments and take action.</p>
-				</section>
+				<MotionWrapper animation="fadeUp" delay={0.2} client:load>
+					<section class="bg-[#eaebe2] rounded-xl p-8 space-y-4 sunken-shadow">
+						<h2 class="text-2xl text-[#005d4b]">about me</h2>
+						<p class="mb-2">I'm a curious technologist with a passion for building. Currently, I'm studying CS at Cornell, where I spend a lot of time building community at <a href="https://armada.build/" class="link">Armada</a> and writing code for <a href="https://www.cornellautoboat.com/" class="link">Cornell AutoBoat.</a></p>
+						<p>I've done a fair bit of work in full-stack development, but I'm also dabbling in startups, AI, and creative work. Lately, I've been interested in AI agents, NeRFs/Gaussian Splatting, and embodied AI - tools that can help intelligent systems perceive their environments and take action.</p>
+					</section>
+				</MotionWrapper>
 
-				<section class="pt-8 space-y-4">
-					<h2 class="text-2xl text-[#005d4b] mx-8">projects</h2>
-					<ul role="list" class="flex flex-col gap-4">
-						<Card
-							href="https://github.com/ronjj/brh-2024"
-							title="WellBite"
-							body="Nutrition-based meal planning app for college students. Won 1st Place at BigRed//Hacks 2024."
-						/>
-						<Card
-							href="https://latexify-ai.vercel.app/"
-							title="Latexify"
-							body="Full-stack web app for converting handwritten assignments into structured LaTeX documents."
-						/>
-						<Card
-							href="https://github.com/ronaldleung1/shelter-swipe"
-							title="Shelter Swipe"
-							body="Mobile application for discovering adoptable shelter animals. Won Most Creative at AppDev Hack Challenge FA23"
-						/>
-						<Card
-							href="https://github.com/ronaldleung1/ocaml-keyboard"
-							title="OCaml Keyboard"
-							body="Virtual piano desktop app made with OCaml and Raylib. Final project for CS 3110 at Cornell"
-						/>
-					</ul>
-				</section>
+				<MotionWrapper animation="fadeUp" delay={0.3} client:load>
+					<section class="pt-8 space-y-4">
+						<h2 class="text-2xl text-[#005d4b] mx-8">projects</h2>
+						<ul role="list" class="flex flex-col gap-4">
+							<MotionWrapper animation="fadeUp" delay={0.4} hoverAnimation="scale" client:load>
+								<Card
+									href="https://github.com/ronjj/brh-2024"
+									title="WellBite"
+									body="Nutrition-based meal planning app for college students. Won 1st Place at BigRed//Hacks 2024."
+								/>
+							</MotionWrapper>
+							
+							<MotionWrapper animation="fadeUp" delay={0.5} hoverAnimation="scale" client:load>
+								<Card
+									href="https://latexify-ai.vercel.app/"
+									title="Latexify"
+									body="Full-stack web app for converting handwritten assignments into structured LaTeX documents."
+								/>
+							</MotionWrapper>
+							
+							<MotionWrapper animation="fadeUp" delay={0.6} hoverAnimation="scale" client:load>
+								<Card
+									href="https://github.com/ronaldleung1/shelter-swipe"
+									title="Shelter Swipe"
+									body="Mobile application for discovering adoptable shelter animals. Won Most Creative at AppDev Hack Challenge FA23"
+								/>
+							</MotionWrapper>
+							
+							<MotionWrapper animation="fadeUp" delay={0.7} hoverAnimation="scale" client:load>
+								<Card
+									href="https://github.com/ronaldleung1/ocaml-keyboard"
+									title="OCaml Keyboard"
+									body="Virtual piano desktop app made with OCaml and Raylib. Final project for CS 3110 at Cornell"
+								/>
+							</MotionWrapper>
+						</ul>
+					</section>
+				</MotionWrapper>
 
-				<section class="p-8 space-y-4">
-					<h2 class="text-2xl text-[#005d4b]">get in touch</h2>
-					<p>I'm always down to chat. Feel free to reach out at rfl68 [at] cornell [dot] edu. You can also find me on <a href="https://github.com/ronaldleung1" class="link">GitHub</a> and <a href="https://www.linkedin.com/in/ronaldleung1" class="link">LinkedIn</a>.</p>
-				</section>
+				<MotionWrapper animation="fadeUp" delay={0.8} client:load>
+					<section class="p-8 space-y-4">
+						<h2 class="text-2xl text-[#005d4b]">get in touch</h2>
+						<p>I'm always down to chat. Feel free to reach out at rfl68 [at] cornell [dot] edu. You can also find me on <a href="https://github.com/ronaldleung1" class="link">GitHub</a> and <a href="https://www.linkedin.com/in/ronaldleung1" class="link">LinkedIn</a>.</p>
+					</section>
+				</MotionWrapper>
 			</article>
 		</div>
 	</main>
